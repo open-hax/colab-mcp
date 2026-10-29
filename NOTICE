@@ -1,0 +1,14 @@
+OpenHAX compatibility fork, 2026-10-29.
+Based on googlecolab/colab-mcp commit b9ab3899e0f1fa493390b1fd6d54aa2e464ecdf1.
+The original Apache-2.0 LICENSE and copyright notices are retained unchanged.
+Local version: 1.0.1+openhax.cleanup.1; this is not an official Google release.
+ColabWebSocketServer closes all four endpoints of its two owned memory streams,
+including the paired endpoints, on normal exit or an unstarted server exit.
+The FastMCP public version remains 2.14.5, with explicit local version
+2.14.5+openhax.joserfc.1. Dependencies use the reachable immutable OpenHAX fork
+commit a7f197b507e570997909cc59c385f9301e262cb8 instead of an unpublished
+bare PyPI local version. This source proposal does not assert release adoption.
+
+OpenHAX-authored library modifications: Copyright (C) 2026 OpenHAX contributors.
+GNU LGPL version 3 or later; see LICENSING.md, COPYING.LESSER and COPYING.
+Original upstream contributions and copied upstream patch portions remain Apache-2.0.
