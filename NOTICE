@@ -6,7 +6,7 @@ ColabWebSocketServer closes all four endpoints of its two owned memory streams,
 including the paired endpoints, on normal exit or an unstarted server exit.
 The FastMCP public version remains 2.14.5, with explicit local version
 2.14.5+openhax.joserfc.1. Dependencies use the reachable immutable OpenHAX fork
-commit a7f197b507e570997909cc59c385f9301e262cb8 instead of an unpublished
+commit ece14b78b0c44bc80ef7fe8c2955caa6bf5f6732 instead of an unpublished
 bare PyPI local version. This source proposal does not assert release adoption.
 
 OpenHAX-authored library modifications: Copyright (C) 2026 OpenHAX contributors.

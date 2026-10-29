@@ -1,3 +1,5 @@
+# Modified by OpenHAX contributors on 2026-10-29.
+# Original upstream terms remain; see NOTICE and LICENSING.md.
 version = 1
 revision = 3
 requires-python = ">=3.13"
@@ -233,7 +235,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "anyio", specifier = ">=4.5" },
-    { name = "fastmcp", git = "https://github.com/open-hax/fastmcp?rev=a7f197b507e570997909cc59c385f9301e262cb8" },
+    { name = "fastmcp", git = "https://github.com/open-hax/fastmcp?rev=ece14b78b0c44bc80ef7fe8c2955caa6bf5f6732" },
     { name = "google-auth-oauthlib", specifier = ">=0.7.0" },
     { name = "jupyter-kernel-client", specifier = ">=0.9.0" },
     { name = "mcp", extras = ["cli"], specifier = ">=1.20.0" },
@@ -247,7 +249,7 @@ requires-dist = [
 commit = [{ name = "pre-commit", specifier = ">=4.3.0" }]
 dev = [
     { name = "coverage", specifier = ">=7.13.1" },
-    { name = "fastmcp", git = "https://github.com/open-hax/fastmcp?rev=a7f197b507e570997909cc59c385f9301e262cb8" },
+    { name = "fastmcp", git = "https://github.com/open-hax/fastmcp?rev=ece14b78b0c44bc80ef7fe8c2955caa6bf5f6732" },
     { name = "jupyter-kernel-client" },
     { name = "pytest", specifier = ">=8.4.2" },
     { name = "pytest-asyncio", specifier = ">=1.2.0" },
@@ -489,7 +491,7 @@ lua = [
 [[package]]
 name = "fastmcp"
 version = "2.14.5+openhax.joserfc.1"
-source = { git = "https://github.com/open-hax/fastmcp?rev=a7f197b507e570997909cc59c385f9301e262cb8#a7f197b507e570997909cc59c385f9301e262cb8" }
+source = { git = "https://github.com/open-hax/fastmcp?rev=ece14b78b0c44bc80ef7fe8c2955caa6bf5f6732#ece14b78b0c44bc80ef7fe8c2955caa6bf5f6732" }
 dependencies = [
     { name = "authlib" },
     { name = "cyclopts" },

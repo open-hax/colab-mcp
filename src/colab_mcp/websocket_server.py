@@ -157,6 +157,7 @@ class ColabWebSocketServer:
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
+        """Close all owned stream endpoints before awaiting an existing server."""
         logging.info("Closing WebSocket server")
         if self._server:
             self._server.close()

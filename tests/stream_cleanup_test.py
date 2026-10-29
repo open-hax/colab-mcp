@@ -9,6 +9,7 @@ from colab_mcp.websocket_server import ColabWebSocketServer
 
 
 def endpoints(server):
+    """Return both ends of both streams owned by the server."""
     return [
         server.read_stream,
         server.write_stream,
@@ -19,6 +20,7 @@ def endpoints(server):
 
 @pytest.mark.asyncio
 async def test_actual_websocket_context_closes_all_four_owned_endpoints():
+    """A real started WebSocket context releases every owned endpoint."""
     server = ColabWebSocketServer(host="127.0.0.1")
     streams = endpoints(server)
     assert not any(s._closed for s in streams)
@@ -30,6 +32,7 @@ async def test_actual_websocket_context_closes_all_four_owned_endpoints():
 
 @pytest.mark.asyncio
 async def test_unstarted_server_cleanup_still_closes_all_four_endpoints():
+    """Cleanup releases paired endpoints even before a server is started."""
     server = ColabWebSocketServer(host="127.0.0.1")
     streams = endpoints(server)
     assert server._server is None
@@ -39,6 +42,7 @@ async def test_unstarted_server_cleanup_still_closes_all_four_endpoints():
 
 @pytest.mark.asyncio
 async def test_native_shutdown_wait_failure_does_not_leave_stream_endpoints_open():
+    """Shutdown wait errors preserve the prior complete stream cleanup."""
     server = ColabWebSocketServer(host="127.0.0.1")
     streams = endpoints(server)
 

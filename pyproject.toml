@@ -1,3 +1,5 @@
+# Modified by OpenHAX contributors on 2026-10-29.
+# Original upstream terms remain; see NOTICE and LICENSING.md.
 [project]
 name = "colab-mcp"
 version = "1.0.1+openhax.cleanup.1"
@@ -12,7 +14,7 @@ license = "Apache-2.0 AND LGPL-3.0-or-later"
 license-files = ["LICENSE", "NOTICE", "COPYING", "COPYING.LESSER", "LICENSING.md"]
 dependencies = [
     "anyio>=4.5",
-    "fastmcp @ git+https://github.com/open-hax/fastmcp@a7f197b507e570997909cc59c385f9301e262cb8",
+    "fastmcp @ git+https://github.com/open-hax/fastmcp@ece14b78b0c44bc80ef7fe8c2955caa6bf5f6732",
     "mcp[cli]>=1.20.0",
     "pydantic>=2.12.3,<3.0.0",
     "requests>=2.32.5",
@@ -32,7 +34,7 @@ build-backend = "hatchling.build"
 [dependency-groups]
 dev = [
     "coverage>=7.13.1",
-    "fastmcp @ git+https://github.com/open-hax/fastmcp@a7f197b507e570997909cc59c385f9301e262cb8",
+    "fastmcp @ git+https://github.com/open-hax/fastmcp@ece14b78b0c44bc80ef7fe8c2955caa6bf5f6732",
     "jupyter-kernel-client",
     "pytest>=8.4.2",
     "pytest-asyncio>=1.2.0",
