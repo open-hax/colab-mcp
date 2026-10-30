@@ -1,3 +1,6 @@
+# OpenHAX modification notice (2026-10-29): compatibility adaptation.
+# OpenHAX-authored changes: LGPL-3.0-or-later; upstream portions retain Apache-2.0.
+# See NOTICE and LICENSING.md for provenance and the modification boundary.
 # Copyright 2026 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -154,9 +157,13 @@ class ColabWebSocketServer:
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
+        """Close all owned stream endpoints before awaiting an existing server."""
         logging.info("Closing WebSocket server")
         if self._server:
             self._server.close()
-            self.write_stream.close()
-            self.read_stream.close()
+        self.write_stream.close()
+        self.read_stream.close()
+        self._read_stream_writer.close()
+        self._write_stream_reader.close()
+        if self._server:
             await self._server.wait_closed()
